@@ -18,13 +18,13 @@ map_t udp_table;
  */
 static uint16_t udp_checksum(buf_t *buf, uint8_t *src_ip, uint8_t *dst_ip)
 {
+    // Step1: 调用buf_add_header()函数增加UDP伪头部
+    buf_add_header(buf, sizeof(ip_hdr_t));
 
     // Step2: 暂存IP头部，以免被覆盖
     ip_hdr_t ip_hdr;
     memcpy(&ip_hdr, buf->data, sizeof(ip_hdr_t));
-
-    // Step1: 调用buf_add_header()函数增加UDP伪头部
-    buf_add_header(buf, sizeof(udp_peso_hdr_t));
+    buf_remove_header(buf, sizeof(ip_hdr_t) - sizeof(udp_peso_hdr_t));
 
     // Step3: 填写UDP伪头部的12字节字段
     udp_peso_hdr_t *udp_pseudo_hdr = (udp_peso_hdr_t *) buf->data;
@@ -43,11 +43,14 @@ static uint16_t udp_checksum(buf_t *buf, uint8_t *src_ip, uint8_t *dst_ip)
     }
     uint16_t checksum = checksum16((uint16_t *) buf->data, buf->len);
 
-    // Step6: 调用buf_remove_header()函数去掉UDP伪头部
-    buf_remove_header(buf, sizeof(udp_peso_hdr_t));
-
     // Step5: 将暂存的IP头部拷贝回来
+    buf_add_header(buf, sizeof(ip_hdr_t)-sizeof(udp_peso_hdr_t));
     memcpy(buf->data, &ip_hdr, sizeof(ip_hdr_t));
+
+    // Step6: 调用buf_remove_header()函数去掉UDP伪头部
+    buf_remove_header(buf, sizeof(ip_hdr_t));
+
+    if(paddled) buf_remove_padding(buf, 1);
 
     // Step7: 返回计算出来的校验和值
     return checksum;
@@ -79,7 +82,8 @@ void udp_in(buf_t *buf, uint8_t *src_ip)
     hdr->checksum16 = checksum;
 
     // Step 3: Lookup the callback function for the destination port
-    udp_handler_t *cb = (udp_handler_t *)map_get(&udp_table, swap16(hdr->dst_port16));
+    uint16_t dst_port16 = swap16(hdr->dst_port16);
+    udp_handler_t *cb = (udp_handler_t *)map_get(&udp_table, &dst_port16);
     if (!cb) {
         // Step 4: If the port is not found, send an ICMP unreachable packet
         buf_add_header(buf, sizeof(ip_hdr_t));
@@ -103,7 +107,6 @@ void udp_in(buf_t *buf, uint8_t *src_ip)
 void udp_out(buf_t *buf, uint16_t src_port, uint8_t *dst_ip, uint16_t dst_port)
 {
     // Step1: 调用buf_add_header()函数添加UDP报头
-    uint16_t len = buf->len;
     buf_add_header(buf, sizeof(udp_hdr_t));
 
     // Step2: 填充UDP首部字段
