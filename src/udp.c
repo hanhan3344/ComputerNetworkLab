@@ -112,7 +112,7 @@ void udp_out(buf_t *buf, uint16_t src_port, uint8_t *dst_ip, uint16_t dst_port)
     // Step2: 填充UDP首部字段
     udp_hdr_t *udp_hdr = (udp_hdr_t *) buf->data;
     udp_hdr->src_port16 = swap16(src_port);
-    udp_hdr->dst_port16 = swap16(dst_port);
+    udp_hdr->dst_port16 = dst_port;
     udp_hdr->total_len16 = swap16(buf->len);  // UDP报文长度包含UDP头部长度
     udp_hdr->checksum16 = 0;  // 先将校验和字段填充0
 
