@@ -135,8 +135,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/root/net-lab/build",
-		"source" : "/root/net-lab"
+		"build" : "/root/lab_ComputerNetwork/net-lab/build",
+		"source" : "/root/lab_ComputerNetwork/net-lab"
 	},
 	"version" : 
 	{

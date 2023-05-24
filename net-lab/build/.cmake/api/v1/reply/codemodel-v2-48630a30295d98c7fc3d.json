@@ -50,49 +50,49 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "arp_test::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-arp_test-Debug-2434f2d95027bf3f3431.json",
+					"jsonFile" : "target-arp_test-Debug-b329b1c77c5edbebd16f.json",
 					"name" : "arp_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "eth_in::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-eth_in-Debug-d2fe2b667c9794bc228e.json",
+					"jsonFile" : "target-eth_in-Debug-ba1bfeaa08401078a9ee.json",
 					"name" : "eth_in",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "eth_out::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-eth_out-Debug-c52d3e1a7cffe69bcab1.json",
+					"jsonFile" : "target-eth_out-Debug-762b8315a91cf5014703.json",
 					"name" : "eth_out",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "icmp_test::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-icmp_test-Debug-d72d9b17e8c4191a57df.json",
+					"jsonFile" : "target-icmp_test-Debug-23894634af5d092eb8c1.json",
 					"name" : "icmp_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "ip_frag_test::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ip_frag_test-Debug-bcbff6463a90569ba719.json",
+					"jsonFile" : "target-ip_frag_test-Debug-62bbf4a22c8395f623a4.json",
 					"name" : "ip_frag_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "ip_test::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ip_test-Debug-3e4e09be0d0366c76da9.json",
+					"jsonFile" : "target-ip_test-Debug-45dee2cee85b1085aab0.json",
 					"name" : "ip_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "main::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-main-Debug-3b4d8823ef952d424a85.json",
+					"jsonFile" : "target-main-Debug-d598eafed23d45468183.json",
 					"name" : "main",
 					"projectIndex" : 0
 				}
@@ -102,8 +102,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/root/net-lab/build",
-		"source" : "/root/net-lab"
+		"build" : "/root/lab_ComputerNetwork/net-lab/build",
+		"source" : "/root/lab_ComputerNetwork/net-lab"
 	},
 	"version" : 
 	{

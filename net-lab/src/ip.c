@@ -49,10 +49,12 @@ void ip_in(buf_t *buf, uint8_t *src_mac)
         case NET_PROTOCOL_ARP:
         case NET_PROTOCOL_IP:
         case NET_PROTOCOL_ICMP:
+        case NET_PROTOCOL_TCP:
         case NET_PROTOCOL_UDP:
             // Step 6: 去掉IP报头
             buf_remove_header(buf, iphdr->hdr_len * IP_HDR_LEN_PER_BYTE);
-            net_in(buf, iphdr->protocol, iphdr->src_ip);
+            int res = net_in(buf, iphdr->protocol, iphdr->src_ip);
+            // printf("%d\n", res);
             break;
         // case NET_PROTOCOL_TCP:
         //     net_in(buf, iphdr->protocol, iphdr->src_ip);

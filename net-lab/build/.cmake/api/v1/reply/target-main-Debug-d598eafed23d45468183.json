@@ -71,11 +71,11 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "/root/net-lab/./include"
+					"path" : "/root/lab_ComputerNetwork/net-lab/./include"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/root/net-lab/./Npcap/Include"
+					"path" : "/root/lab_ComputerNetwork/net-lab/./Npcap/Include"
 				}
 			],
 			"language" : "C",
@@ -112,16 +112,16 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-L/root/net-lab/./Npcap/Lib",
+				"fragment" : "-L/root/lab_ComputerNetwork/net-lab/./Npcap/Lib",
 				"role" : "libraryPath"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-L/root/net-lab/./Npcap/Lib/x64",
+				"fragment" : "-L/root/lab_ComputerNetwork/net-lab/./Npcap/Lib/x64",
 				"role" : "libraryPath"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/root/net-lab/./Npcap/Lib:/root/net-lab/./Npcap/Lib/x64",
+				"fragment" : "-Wl,-rpath,/root/lab_ComputerNetwork/net-lab/./Npcap/Lib:/root/lab_ComputerNetwork/net-lab/./Npcap/Lib/x64",
 				"role" : "libraries"
 			},
 			{

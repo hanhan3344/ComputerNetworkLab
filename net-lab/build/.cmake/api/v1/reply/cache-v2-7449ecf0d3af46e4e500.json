@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/root/net-lab/build"
+			"value" : "/root/lab_ComputerNetwork/net-lab/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -107,7 +107,7 @@
 				}
 			],
 			"type" : "BOOL",
-			"value" : "ON"
+			"value" : "TRUE"
 		},
 		{
 			"name" : "CMAKE_COMMAND",
@@ -595,7 +595,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/root/net-lab"
+			"value" : "/root/lab_ComputerNetwork/net-lab"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1039,7 +1039,7 @@
 				}
 			],
 			"type" : "BOOL",
-			"value" : "NO"
+			"value" : "FALSE"
 		},
 		{
 			"name" : "CMAKE_SKIP_RPATH",
@@ -1055,7 +1055,7 @@
 				}
 			],
 			"type" : "BOOL",
-			"value" : "NO"
+			"value" : "FALSE"
 		},
 		{
 			"name" : "CMAKE_STATIC_LINKER_FLAGS",
@@ -1191,7 +1191,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/root/net-lab/build"
+			"value" : "/root/lab_ComputerNetwork/net-lab/build"
 		},
 		{
 			"name" : "net_SOURCE_DIR",
@@ -1203,7 +1203,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/root/net-lab"
+			"value" : "/root/lab_ComputerNetwork/net-lab"
 		}
 	],
 	"kind" : "cache",
